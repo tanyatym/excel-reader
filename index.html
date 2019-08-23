@@ -27,6 +27,10 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?99AB7F62D2A4350095C5BCE9C
 <!-- <input type='file' onchange='openFile(event)'><br> -->
 <!-- <div id='output'></div> -->
 <div id="excel-reader">
+    <excel-rerader></excel-rerader>
+    <excel-rerader></excel-rerader>
+</div>
+<template id='excel-reader-template'>
     <div class="file-input">
         <input type='file' @change="openFile">
         <div class='output'>
@@ -47,7 +51,7 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?99AB7F62D2A4350095C5BCE9C
             </div>
         </div>
     </div>
-</div>
+</template>
 <footer>&&&</footer>
 <script src="plugin/excel/vue/main.js"></script>
 
