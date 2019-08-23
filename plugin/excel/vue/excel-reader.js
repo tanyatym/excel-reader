@@ -1,5 +1,5 @@
 Vue.component('excel-reader', {
-  el: '#excele-reader-template',
+  template: '#excel-reader-template',
   data: function () {
     return {
       file: null,
