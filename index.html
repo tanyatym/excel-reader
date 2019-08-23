@@ -26,7 +26,28 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?99AB7F62D2A4350095C5BCE9C
 <h1>EXCEL *** READER</h1>
 <!-- <input type='file' onchange='openFile(event)'><br> -->
 <!-- <div id='output'></div> -->
-<div id="excel-reader"></div>
+<div id="excel-reader">
+    <div class="file-input">
+        <input type='file' @change="openFile">
+        <div class='output'>
+            <div v-for="(sheet, name) in book" :key="name">
+                <h3>{{ name }}</h3>
+                <table>
+                    <tr>
+                        <th v-for="(value, collTitle) in sheet[0]" :key="collTitle">
+                            {{ collTitle }}
+                        </th>
+                    </tr>
+                    <tr v-for="(row, i) in sheet" :key="i">
+                        <td v-for="(value, key) in row" :key="key">
+                            {{ value }}
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
 <footer>&&&</footer>
 <script src="plugin/excel/vue/main.js"></script>
 
