@@ -8,7 +8,7 @@ Vue.component('excel-reader', {
   },
   computed: {
     book() {
-      const book = { header: [], rows: [] }
+      const book = { }
       if (!this.sourceBook) return 
        Object.keys(this.sourceBook).forEach(sheetName => {
          if (this.sourceBook[sheetName].length > 0) {
