@@ -1,6 +1,6 @@
 Vue.component('table-header',{
     template: "#table-header-template",
     props: {
-        collNames: []
+        collNames: {type: Array, default: null}
     }   
 })
