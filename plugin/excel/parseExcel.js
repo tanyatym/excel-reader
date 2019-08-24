@@ -12,7 +12,7 @@ const parseExcel = function (file) {
   return new Promise((resolve, reject) => {
 
     if (file.name.substr(-5) !== '.xlsx') {
-      reject("Wrong file format (accept .xlsx)")
+      reject("Wrong file format (accepts .xlsx)")
       return
     }
     reader.onerror = () => {

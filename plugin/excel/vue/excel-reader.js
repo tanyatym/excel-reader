@@ -1,5 +1,21 @@
 Vue.component('excel-reader', {
-  template: '#excel-reader-template',
+  template: `
+  <div class="file-input">
+    <input type='file' @change="openFile">
+    <div class="output">
+      <div v-for="(sheet, name) in book" :key="name">
+        <h3>{{ name }}</h3>
+        <table>
+          <table-header :coll-names="sheet.header"></table-header>
+          <tr v-for="(row, i) in sheet.rows" :key="i">
+            <td v-for="(value, j) in row" :key="j">
+              {{ value }}
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>`,
   data: function () {
     return {
       file: null,

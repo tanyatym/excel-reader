@@ -1,4 +1,4 @@
-https://prod.liveshare.vsengsaas.visualstudio.com/join?99AB7F62D2A4350095C5BCE9CE4248130E09
+<!-- https://prod.liveshare.vsengsaas.visualstudio.com/join?99AB7F62D2A4350095C5BCE9CE4248130E09 -->
 <!DOCTYPE html>
 <html>
   <head>
@@ -26,31 +26,6 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?99AB7F62D2A4350095C5BCE9C
     <excel-reader></excel-reader>
   </div>
   <footer>&&&</footer>
-  <script type="text/x-template" id="excel-reader-template">
-    <div class="file-input">
-        <input type='file' @change="openFile">
-        <div class='output'>
-            <div v-for="(sheet, name) in book" :key="name">
-                <h3>{{ name }}</h3>
-                <table>
-                    <table-header :coll-names="sheet.header"></table-header>
-                    <tr v-for="(row, i) in sheet.rows" :key="i">
-                        <td v-for="(value, j) in row" :key="j">
-                            {{ value }}
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-    </div>
-  </script>
-  <script type="text/x-template" id="table-header-template">
-    <tr>
-        <th v-for="(name, i) in collNames" :key="i">
-            {{ name }}
-        </th>
-    </tr>
-  </script>
   <script src="plugin/excel/vue/table-header.js"></script>
   <script src="plugin/excel/vue/excel-reader.js"></script>
   <script src="plugin/excel/vue/main.js"></script>
