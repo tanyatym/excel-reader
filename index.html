@@ -33,8 +33,8 @@ https://prod.liveshare.vsengsaas.visualstudio.com/join?99AB7F62D2A4350095C5BCE9C
             <div v-for="(sheet, name) in book" :key="name">
                 <h3>{{ name }}</h3>
                 <table>
-                    <table-header :coll-name="sheet[0]"></table-header>
-                    <tr v-for="(row, i) in sheet" :key="i">
+                    <table-header :coll-names="sheet.header"></table-header>
+                    <tr v-for="(row, i) in sheet.rows" :key="i">
                         <td v-for="(value, j) in row" :key="j">
                             {{ value }}
                         </td>

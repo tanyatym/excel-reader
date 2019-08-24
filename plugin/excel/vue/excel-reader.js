@@ -14,7 +14,7 @@ Vue.component('excel-reader', {
          if (this.sourceBook[sheetName].length > 0) {
           const rows = this.sourceBook[sheetName].map(row => Object.values(row))
           const collNames = Object.keys(this.sourceBook[sheetName][0])
-          book[sheetName] = [collNames, ...rows]
+          book[sheetName] = { header: collNames, rows: rows }
          }
        })
        return book
