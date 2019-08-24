@@ -1,4 +1,4 @@
 
 var app = new Vue({
-  el: "#excel-reader",
+  el: "#app",
 })
