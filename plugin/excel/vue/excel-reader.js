@@ -7,11 +7,7 @@ Vue.component('excel-reader', {
         <h3>{{ name }}</h3>
         <table>
           <table-header :coll-names="sheet.header"></table-header>
-          <tr v-for="(row, i) in sheet.rows" :key="i">
-            <td v-for="(value, j) in row" :key="j">
-              {{ value }}
-            </td>
-          </tr>
+          <table-row v-for="(row, i) in sheet.rows" :values="row" :key="i"></table-row>
         </table>
       </div>
     </div>
@@ -24,16 +20,19 @@ Vue.component('excel-reader', {
   },
   computed: {
     book() {
-      const book = { }
-      if (!this.sourceBook) return 
-       Object.keys(this.sourceBook).forEach(sheetName => {
-         if (this.sourceBook[sheetName].length > 0) {
+      const book = {}
+      if (!this.sourceBook) return
+      Object.keys(this.sourceBook).forEach(sheetName => {
+        if (this.sourceBook[sheetName].length > 0) {
           const rows = this.sourceBook[sheetName].map(row => Object.values(row))
           const collNames = Object.keys(this.sourceBook[sheetName][0])
-          book[sheetName] = { header: collNames, rows: rows }
-         }
-       })
-       return book
+          book[sheetName] = {
+            header: collNames,
+            rows: rows
+          }
+        }
+      })
+      return book
     }
   },
   methods: {
